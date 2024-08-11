@@ -9,7 +9,7 @@ The only requirement is Nix itself. Install Nix following: https://nix.dev/insta
 After Nix has been installed correctly, cd to the root of this directory and execute
 
 ```bash
-nix develop
+nix develop --extra-experimental-features nix-command --extra-experimental-features flakes
 ```
 
 This will mount the development environment and install ester. Upon finishing you will be in a bash shell with the following commands available: `star1d`, `star2d`, `star_evol`
