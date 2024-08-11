@@ -1,6 +1,6 @@
 # Ester Nix
 
-[Evolution STEllaire en Rotation (Ester)](https://github.com/ester-project/ester) is a 2d stellar evolution code. This repo provides a script to build a C++/Fortran/Python development environment to compile and execute ster using the [Nix](https://nix.dev) ecosystem. 
+[Evolution STEllaire en Rotation (Ester)](https://github.com/ester-project/ester) is a 2d stellar evolution code. This repo provides a script to build a C++/Fortran/Python development environment to compile and execute ester using the [Nix](https://nix.dev) ecosystem. 
 
 ## Installation and usage
 
@@ -12,7 +12,7 @@ After Nix has been installed correctly, cd to the root of this directory and exe
 nix develop --extra-experimental-features nix-command --extra-experimental-features flakes
 ```
 
-This will mount the development environment and install ester. Upon finishing you will be in a bash shell with the following commands available: `star1d`, `star2d`, `star_evol`
+This will mount the development environment and install ester. Upon finishing, you will be in a bash shell with the following commands available: `star1d`, `star2d`, `star_evol`
 
 ## Why Nix
 
@@ -26,5 +26,5 @@ The lock file in this directory guarantees consistent a development environment,
 - Only Openblas was tested. TODO: Test MKL
 - TODO: Create an ester flake
 - TODO: Test build on MacOS
-- TODO: Test build on Windows WSL
+- ~~TODO: Test build on Windows WSL~~ 
 
