@@ -1,2 +1,6 @@
 /ester
 /install
+
+*.swap
+__pycache__/
+*.py[cod]

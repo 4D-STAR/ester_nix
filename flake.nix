@@ -19,19 +19,24 @@
         default = pkgs.mkShell
           {
             nativeBuildInputs = with pkgs; [
+              glibc.debug
               cmake
               vim
               pkg-config
               swig
             ];
             buildInputs = with pkgs; [
+              binutils
+              gdb
+              which
               gfortran
-              openblasCompat
-              hdf5-cpp
-              python311Full
+              openblasCompat.dev
+              hdf5-cpp.dev
+              python311Full.debug
               python311Packages.numpy
               python311Packages.matplotlib
               python311Packages.tkinter
+              hotspot
             #] ++ (if system == "aarch64-darwin" then [ ] else [ gdb ]);
             ];
             
