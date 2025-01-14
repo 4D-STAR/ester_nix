@@ -19,7 +19,6 @@
         default = pkgs.mkShell
           {
             nativeBuildInputs = with pkgs; [
-              glibc.debug
               cmake
               vim
               pkg-config
@@ -27,18 +26,18 @@
             ];
             buildInputs = with pkgs; [
               binutils
-              gdb
               which
               gfortran
-              openblasCompat.dev
+              #openblasCompat.dev
+              blas
+              lapack
               hdf5-cpp.dev
-              python311Full.debug
+              python311Full
               python311Packages.numpy
               python311Packages.matplotlib
               python311Packages.tkinter
-              hotspot
-            #] ++ (if system == "aarch64-darwin" then [ ] else [ gdb ]);
-            ];
+            ] ++ (if system == "aarch64-darwin" then [ ] else [ gdb hotspot ]);
+            #];
             
             shellHook = ''
               mkdir -p exec
