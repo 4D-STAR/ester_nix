@@ -4,7 +4,11 @@
 
 ## Pre-requisites
 
-The only requirement is Nix itself. Install Nix following the instructions at https://nixos.org/download/#nix-install-linux. MacOS users may also using the Determinate System's the graphical installer: https://determinate.systems/posts/graphical-nix-installer/
+The only requirement is Nix itself. Install Nix following the instructions at https://nixos.org/download/.
+
+Alternatively, you can use one-liner for installing Determinate Nix 
+
+`curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate` 
 
 Test your installation by running 
 
@@ -22,15 +26,13 @@ Clone or download this repo. Then open a terminal, navigate to the root of this 
 nix develop --extra-experimental-features nix-command --extra-experimental-features flakes
 ```
 
-This will instantiate the development environment and compile Ester's `evolution` branch. Upon finishing, you will be in a bash shell with the following commands available: `star1d`, `star2d`, `star_evol`. The
+This will instantiate the development environment and compile Ester's `evolution` branch. Upon finishing, you will be in a bash shell with the following commands available: `star1d`, `star2d`, `star_evol`. 
+
 
 ## Why Nix
 
-The lock file in this directory guarantees consistent a development environment, greatly facilitating the installation of ester across different distributions
+The lock file in this directory guarantees a consistent development environment, greatly facilitating the installation of ester across different distributions
 
 ## Notes and TODOs
+-The build has been tested in Ubuntu, Arch Linux, Rocky Linux, MacOS(M1) and in Windows through the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
-- The build has been tested in Ubuntu, Arch Linux, Rocky Linux and in Windows through the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-- **The build has not been tested on MacOS.** If you have a MacOS system and encounter errors please inform us
-- A small patch on Ester's `CMakeList.txt` was needed to find `numpy` include dirs. Additionally, gfortran > 9.5 required compiling with `-fallow-argument-mismatch -fallow-invalid-boz`. 
-- Only Netlib BLAS and OpenBLAS have been tested. TODO: Test MKL
