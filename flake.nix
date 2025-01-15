@@ -28,7 +28,6 @@
               binutils
               which
               gfortran
-	      gccStdenv
               llvmPackages.openmp
               openblasCompat.dev
               hdf5-cpp.dev
