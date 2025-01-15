@@ -3,8 +3,8 @@
 
   inputs = 
     {
-      nixpkgs.url = "github:nixos/nixpkgs/38b7104fd1db0046ceed579f5dab4e62f136589c"; # GCC12
-      #nixpkgs.url = "github:nixos/nixpkgs/a9858885e197f984d92d7fe64e9fff6b2e488d40"; #GCC13
+      #nixpkgs.url = "github:nixos/nixpkgs/38b7104fd1db0046ceed579f5dab4e62f136589c"; # GCC12
+      nixpkgs.url = "github:nixos/nixpkgs/a9858885e197f984d92d7fe64e9fff6b2e488d40"; #GCC13
     };
 
   outputs = { self, nixpkgs, ... }:
@@ -28,15 +28,13 @@
               binutils
               which
               gfortran
-              #openblasCompat.dev
-              blas
-              lapack
+              llvmPackages.openmp
+              openblasCompat.dev
               hdf5-cpp.dev
               python311Full
               python311Packages.numpy
               python311Packages.matplotlib
               python311Packages.tkinter
-            #] ++ (if system == "aarch64-darwin" then [ ] else [ gdb hotspot ]);
             ];
             
             shellHook = ''
