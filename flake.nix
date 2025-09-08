@@ -23,11 +23,15 @@
               vim
               pkg-config
               swig
+              git
+              #perf-tools
+              #hotspot
             ];
             buildInputs = with pkgs; [
               binutils
               which
               gfortran
+              boost
               llvmPackages.openmp
               openblasCompat.dev
               hdf5-cpp.dev
@@ -40,6 +44,7 @@
             shellHook = ''
               mkdir -p exec
               export PATH=$PWD/install/bin:$PATH
+              export ESTER=`pwd`/ester
               ./install_ester.sh
             '';
           };
