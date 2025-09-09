@@ -9,7 +9,7 @@ The only requirement is Nix itself. Install Nix following the instructions at ht
 Alternatively, you can use one-liner for installing Determinate Nix 
 
 ```
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate
 ``` 
 
 Test your installation by running 
